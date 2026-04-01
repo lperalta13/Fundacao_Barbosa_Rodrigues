@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Instituto Borboletas | Transformação Social e Cultural</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#006e2c",
+                        "secondary-fixed": "#89fa9b",
+                        "on-tertiary-fixed": "#2a1800",
+                        "tertiary-container": "#5b3900",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "outline-variant": "#c4c6d2",
+                        "secondary-container": "#86f898",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d9e2ff",
+                        "outline": "#747782",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed-dim": "#6ddd81",
+                        "primary": "#002763",
+                        "surface-tint": "#3d5ca1",
+                        "on-primary-fixed-variant": "#234487",
+                        "surface-variant": "#e4e2e1",
+                        "on-secondary-fixed": "#002108",
+                        "on-primary-container": "#8daaf5",
+                        "background": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "on-surface-variant": "#444650",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#1a3d80",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "on-background": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-secondary-fixed-variant": "#005320",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b0c6ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container": "#f0eded",
+                        "on-error": "#ffffff",
+                        "tertiary": "#3d2500",
+                        "on-primary-fixed": "#001945",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffddb5",
+                        "on-secondary-container": "#00722f",
+                        "on-tertiary-container": "#ea9c14"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #002763 0%, #1a3d80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blob-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(131, 56, 236, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <nav
+        class="docked full-width top-0 sticky z-50 bg-[#fbf9f8]/80 backdrop-blur-xl dark:bg-[#1b1c1c]/80 shadow-sm dark:shadow-none transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-black text-[#1A3D80] dark:text-white uppercase tracking-tighter font-headline">
+                <img alt="Fundação Barbosa Rodrigues"
+                    class="h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105"
+                    src="logo-fund.png" />
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-semibold tracking-tight">
+                <a class="text-[#006e2c] border-b-2 border-[#006e2c] pb-1 transition-colors duration-300"
+                    href="#">Início</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
+                    href="#acoes">Ações</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
+                    href="#sobre">Sobre Nós</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
+                    href="#porque">Por que Borboletas?</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
+                    href="#noticias">Notícias</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    Doe Agora
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Section 1: Hero Carousel -->
+        <section class="relative h-[870px] w-full overflow-hidden bg-surface">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover"
+                    data-alt="vibrant community festival with diverse people smiling and celebrating under warm golden sunset light in an urban park"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCokBQrOn0floCpcWnX9ZnQfUzoPbIQp1KfE6kWFBt1RPuk3w05WYeDKf78r-qaP-mN_6YADsWHEfm5HrMV81yduyWi73y_4X3q58PMzQ58MP7kz9KYKiARqFflaglbkQ9x1huB-U_iKtCPYz0lMWfU5-QUXRyj-r5jCdJNYy5tOvjhfUpfcb6ACL-iPbF3DlpzU72OOIAaFWq_K_7DgmdpVnucVqMcAPG8YVw3QSk2eDOEBfn6MM4fqNuiEG32ZGqN7VlcdxI0Vy8" />
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+            </div>
+            <div
+                class="relative z-10 h-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-start text-on-primary">
+                <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl leading-[1.1]">
+                    Transformando <span class="text-secondary-fixed">Vidas</span> através da Cultura e Educação
+                </h1>
+                <p class="mt-6 text-xl md:text-2xl text-primary-fixed max-w-2xl font-light leading-relaxed">
+                    Fomentamos o desenvolvimento social e cultural em comunidades, criando asas para novos futuros.
+                </p>
+                <div class="mt-10 flex gap-4">
+                    <button
+                        class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary/90 transition-all active:scale-95">
+                        Conheça nossos Projetos
+                    </button>
+                    <button
+                        class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                        Fale Conosco
+                    </button>
+                </div>
+            </div>
+            <!-- Carousel Indicators -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+                <div class="w-12 h-1.5 rounded-full bg-white"></div>
+                <div class="w-3 h-1.5 rounded-full bg-white/40"></div>
+                <div class="w-3 h-1.5 rounded-full bg-white/40"></div>
+            </div>
+        </section>
+        <!-- New Section: Fundação Barbosa Rodrigues (Modern About Us) -->
+        <section class="relative py-28 overflow-hidden bg-white" id="fundacao">
+            <div class="absolute top-0 left-0 w-full h-full blob-bg pointer-events-none opacity-50"></div>
+            <div class="max-w-7xl mx-auto px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-7 space-y-8">
+                        <div
+                            class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary-fixed/30 text-secondary font-bold text-sm uppercase tracking-widest">
+                            <span class="material-symbols-outlined text-sm">history_edu</span>
+                            Nossa Trajetória
+                        </div>
+                        <h2 class="font-headline text-4xl md:text-6xl font-black text-primary leading-tight">
+                            Mais de <span class="text-[#8338ec]">43 anos</span> de impacto e transformação.
+                        </h2>
+                        <div class="prose prose-lg text-on-surface-variant font-medium leading-relaxed space-y-6">
+                            <p>
+                                A Fundação Barbosa Rodrigues é uma entidade com mais de 43 anos de trajetória, dedicada
+                                à promoção da educação, da cultura e do desenvolvimento comunitário. Desde a sua origem,
+                                reafirma sua responsabilidade social como filosofia, colocando a valorização da educação
+                                e o fortalecimento dos vínculos comunitários no centro de sua missão.
+                            </p>
+                            <p>
+                                Ao longo de sua história, ofereceu gratuitamente projetos e ações voltadas a crianças,
+                                adolescentes, educadores e famílias, expandindo sua atuação de Campo Grande/MS para
+                                diferentes municípios do estado. Sua identidade se traduz na crença de que a educação e
+                                a cultura são pilares fundamentais para a construção de um futuro mais justo, solidário
+                                e humano.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-12 pt-8">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-white">
+                                    <span class="material-symbols-outlined text-3xl">school</span>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-primary tracking-tighter">Educação</div>
+                                    <p class="text-xs font-bold text-outline uppercase tracking-wider">Pilar Base</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                                    <span class="material-symbols-outlined text-3xl">diversity_3</span>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-primary tracking-tighter">Comunidade</div>
+                                    <p class="text-xs font-bold text-outline uppercase tracking-wider">Vínculos Fortes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 relative">
+                        <div
+                            class="relative z-10 rounded-[3.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,39,99,0.2)] border-8 border-white">
+                            <img class="w-full aspect-[4/5] object-cover"
+                                data-alt="Logotipo oficial da Fundação Barbosa Rodrigues com elementos de borboleta e texto institucional."
+                                src="https://lh3.googleusercontent.com/aida/ADBb0uiJAktXL5oxK9qH4Xd09fYBeeo0VNDH7EvPF2-3pTNbqNuh5T5Whhf2dkHPDPDzj9Jlmao5mhgPLd9d3eCi3M4dnPz2e9ZZy44IVHb4fakTkZmyxy8D0LlZk2JMUzKlX_C2ny9J5xo-LabkeKiZ6EXn435_Ife2WssMQ8HsXJ5CQeEoiBkNuPA0ltd9NxMzk625b7ruuqu7ncFuksvuCjBu20nJm7Q0ZjIM_D9OtQ0-LwIR5FowSSBqVeQ_4DqcPtpn9uKlbFH4Vw" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 2: Nossas Ações (The Vibrant Cards) -->
+        <section class="py-28 px-8 max-w-7xl mx-auto" id="acoes">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="font-headline text-4xl font-extrabold text-primary mb-4">Nossas Ações</h2>
+                    <p class="text-on-surface-variant text-lg">Iniciativas que geram impacto real e imediato na vida de
+                        centenas de famílias brasileiras.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="p-3 rounded-full border border-outline-variant hover:bg-surface-container-high transition-colors">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button class="p-3 rounded-full bg-primary text-white hover:opacity-90 transition-colors">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Eventos Card -->
+                <div
+                    class="group relative overflow-hidden rounded-[2rem] bg-[#e63946] p-8 h-[400px] flex flex-col justify-end text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-8 right-8">
+                        <span class="material-symbols-outlined text-4xl opacity-50">celebration</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold mb-3">Eventos</h3>
+                    <p class="text-white/90 text-lg mb-6 leading-snug">Festivais, mostras culturais e encontros que
+                        celebram a diversidade e o talento local.</p>
+                    <a class="flex items-center gap-2 font-bold uppercase tracking-wider text-sm" href="#">
+                        Saiba mais <span class="material-symbols-outlined">trending_flat</span>
+                    </a>
+                </div>
+                <!-- Cursos Card -->
+                <div
+                    class="group relative overflow-hidden rounded-[2rem] bg-[#8338ec] p-8 h-[400px] flex flex-col justify-end text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-8 right-8">
+                        <span class="material-symbols-outlined text-4xl opacity-50">school</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold mb-3">Cursos</h3>
+                    <p class="text-white/90 text-lg mb-6 leading-snug">Capacitação profissional e oficinas artísticas
+                        para jovens e adultos em vulnerabilidade.</p>
+                    <a class="flex items-center gap-2 font-bold uppercase tracking-wider text-sm" href="#">
+                        Ver turmas <span class="material-symbols-outlined">trending_flat</span>
+                    </a>
+                </div>
+                <!-- Relatórios Card -->
+                <div
+                    class="group relative overflow-hidden rounded-[2rem] bg-[#cbf3f0] p-8 h-[400px] flex flex-col justify-end text-on-tertiary-fixed hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-8 right-8">
+                        <span class="material-symbols-outlined text-4xl text-on-secondary-container">bar_chart</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold mb-3 text-on-secondary-container">Relatórios</h3>
+                    <p class="text-on-secondary-container/80 text-lg mb-6 leading-snug">Transparência e resultados:
+                        acompanhe o impacto social de cada investimento realizado.</p>
+                    <a class="flex items-center gap-2 font-bold uppercase tracking-wider text-sm text-on-secondary-container"
+                        href="#">
+                        Acessar dados <span class="material-symbols-outlined">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Section 3: Sobre Nós (Asymmetric Layout) -->
+        <section class="bg-surface-container-low py-28" id="sobre">
+            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Nossa
+                        Essência</span>
+                    <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-8 leading-tight">Mudar
+                        o mundo através da empatia e ação coletiva.</h2>
+                    <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+                        <p>O Instituto Borboletas nasceu da convicção de que a arte e a educação são as ferramentas mais
+                            potentes para a metamorfose social. Nossa missão é criar pontes entre oportunidades e
+                            talentos esquecidos.</p>
+                        <p>Valores como transparência, respeito à diversidade e compromisso com o desenvolvimento
+                            sustentável guiam cada uma de nossas pegadas. Acreditamos que, como borboletas, cada pequena
+                            ação pode gerar grandes mudanças em todo o ecossistema.</p>
+                    </div>
+                    <div class="mt-10 grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-3xl font-black text-secondary">+15k</div>
+                            <div class="text-sm uppercase font-bold text-outline">Pessoas Impactadas</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-secondary">120+</div>
+                            <div class="text-sm uppercase font-bold text-outline">Projetos Ativos</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative">
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img class="w-full aspect-square object-cover"
+                            data-alt="diverse group of volunteers and community members working together on a colorful mural painting, vibrant atmosphere and bright daylight"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKN11puO6K1kY3hFmc6PsB8AnLc7CbOaU1NqjuTTfQJ7zQUYArUnlHJ5ysty6aKEt9hDQfhHTlXyyiluvJidd3GK6sR4hMMtVFNvtSHHOXpFyvwOT2fNDYkRJ6hGLbu0kKFK5VcgXP-5OFTu0EX7o8Qlo7mqcM_J1IxJbtyYAO1BbhojChJkgzJTvLen0vQxMZXWDeSpCy1K8hCGE_LH9GwLAs3IoE9vOdb-Bygfme1Ei2ImI9Pz1MX5UIcQ9WvG5u8XLy3la1l4" />
+                    </div>
+                    <!-- Decorative element -->
+                    <div
+                        class="absolute -bottom-6 -left-6 w-32 h-32 bg-tertiary-fixed rounded-full -z-10 blur-2xl opacity-50">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 4: Por que Borboletas? -->
+        <section class="py-28 px-8 max-w-7xl mx-auto" id="porque">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="font-headline text-4xl font-extrabold text-primary mb-6">Por que Borboletas?</h2>
+                <p class="text-lg text-on-surface-variant">Nosso diferencial está na abordagem humanizada e no suporte
+                    de longo prazo que oferecemos a cada beneficiado.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-20 h-20 bg-primary-fixed rounded-3xl flex items-center justify-center text-primary mb-6 transition-transform group-hover:rotate-12">
+                        <span class="material-symbols-outlined text-4xl">eco</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-xl mb-3 text-primary">Sustentabilidade</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Projetos pensados para durar e se tornarem
+                        autossuficientes.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-20 h-20 bg-secondary-fixed rounded-3xl flex items-center justify-center text-on-secondary-container mb-6 transition-transform group-hover:rotate-12">
+                        <span class="material-symbols-outlined text-4xl">groups</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-xl mb-3 text-primary">Comunidade</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Trabalhamos de mãos dadas com os líderes locais.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-20 h-20 bg-tertiary-fixed rounded-3xl flex items-center justify-center text-on-tertiary-fixed-variant mb-6 transition-transform group-hover:rotate-12">
+                        <span class="material-symbols-outlined text-4xl">psychology</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-xl mb-3 text-primary">Metodologia</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Abordagem pedagógica moderna e focada no
+                        indivíduo.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-20 h-20 bg-surface-container-highest rounded-3xl flex items-center justify-center text-primary mb-6 transition-transform group-hover:rotate-12">
+                        <span class="material-symbols-outlined text-4xl">verified</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-xl mb-3 text-primary">Transparência</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Acompanhamento em tempo real de todas as doações.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Section 5: Notícias -->
+        <section class="bg-surface py-28" id="noticias">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex justify-between items-center mb-16">
+                    <h2 class="font-headline text-4xl font-extrabold text-primary">Últimas Notícias</h2>
+                    <a class="text-secondary font-bold flex items-center gap-2 hover:underline" href="#">
+                        Ver todo o blog <span class="material-symbols-outlined">open_in_new</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- News Item 1 -->
+                    <article
+                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="smiling children in a bright classroom holding colorful craft butterflies, soft natural lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi4mvjD10yKvwVs-VR7MqQs7AQMRncHhnxhclykxt-nWSkHzhnmr7GbXkpy1cZFCmoWHyL4SkmWEtyLj3AGipvrupwmvxekEhry_L-WhwpyM4tV1K7QKyChR8T5X8giu6X5rwQcG0DQ7u1fEQ0eIP0QVx0FcOnp5UijwigS0-XnfUFkQiarOKlFebs0g8srCx-X3EXdUaMvS0l6LRWFROBKbnfhlD1gQs_H43SXrjWEpbesSTm1kyKz_i61DHfBWGEaBSZO-K909Q" />
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">15 Out
+                                2024</time>
+                            <h3
+                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
+                                Oficina de Artesanato bate recorde de inscrições</h3>
+                            <p class="text-on-surface-variant line-clamp-2">Mais de 200 jovens participaram da primeira
+                                etapa do projeto 'Voo das Borboletas' neste final de semana...</p>
+                        </div>
+                    </article>
+                    <!-- News Item 2 -->
+                    <article
+                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="outdoor concert stage with local musicians performing under colorful stage lights at night"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHtt_NzElRmEZh-bZXIhCIMLWDx1r8oxtNa0w1hpsi1azluLzZOi_ACFwBDZiw5tUOaciJv-Qlym3sP5LtH03Ae3wowpkiZYB1vKYvdLgQELd6Z3SFNLXtL_1-m_L6gdTsf8y4TWvyjYxB3smxQoAEFuv1HXt-_uKJmchbAtfJHRvG5SMk_GQWY84SBjTlAcOWSpy0JqcHcqBv5E8NxyHhV7-YmqhpNLHiEzbne_-4cNuMwJ76rkxmFvJ3kJqkGTDZk9jkxScR2KI" />
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">10 Out
+                                2024</time>
+                            <h3
+                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
+                                Festival de Inverno arrecada 5 toneladas de alimentos</h3>
+                            <p class="text-on-surface-variant line-clamp-2">A união entre música e solidariedade rendeu
+                                resultados históricos para as famílias cadastradas no instituto...</p>
+                        </div>
+                    </article>
+                    <!-- News Item 3 -->
+                    <article
+                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="professional workshop setting with mentors guiding young entrepreneurs, modern collaborative space"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bL6iLpsq0_IhAjS-mMhx1bBcpgoNEY2-_c8TQET1qbfQ22RJzOPWR9zIlE3zwkTo-W0Jk2c2S4nvHNOQ-IqU7t5BL0UE58ZYBmXaxkqfG-fL4NXcYcbHVZjX_UN721-vkx4RQ2ZijLO6qCfytSEzrYslY9AMRwCVZ8lOOEgK9NUR51ndvG_BHPBDqro6Y-78aIwMqlf9ciWTQjrwsLJUyP086lZYKD9r581z6O82yPuvR_ObOaa1RK_p7HJYio_l0fgMXGLQ7eA" />
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">05 Out
+                                2024</time>
+                            <h3
+                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
+                                Novo programa de mentoria para empreendedores sociais</h3>
+                            <p class="text-on-surface-variant line-clamp-2">Inscrições abertas para o ciclo de
+                                aceleração 2025. Conheça as etapas e como submeter seu projeto social...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Section 6: Parceiros -->
+        <section class="py-16 border-t border-surface-variant">
+            <div class="max-w-7xl mx-auto px-8">
+                <p class="text-center font-bold text-outline-variant uppercase tracking-[0.2em] text-xs mb-10">Quem
+                    apoia nossa causa</p>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-12 md:gap-20 hover:grayscale-0 transition-all duration-700">
+                    <img alt="DothCom" class="h-10 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uhWTaKmam2vQD6O552EkRJma1QlNM4VKJv1n4teu4nZIMT9H8HLrJAiExZH_908I95_qdLhIlk8dC2QV-3JtRoyAIbc3haV4vgaRQuTtr7XgnsnICaOtGkqGsC6ifVXlUWS85wisDqVfc1ZJOyHbO3jZu6FLpP_Al1vr8qxpjOgVh-SfVuBjcmVCBvbJ8j6X7GX5fOZZ4_vDRoB6RoO4Nr6zC4OeZMZSVro4ciZxLkNMRrWpub6PoBlbas8G7aDEGhZ4VIdW4RjTw" />
+                    <img alt="Correio do Estado" class="h-10 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uhijyF3WsYQbT_ZUWYca3R4zLnA0VjSs-WJD0eW3LAi4qNVznXAJxt6qCGSCpU6IQ7eZHOlTCFHtCw1NL7jDuOYdHZ9fz3b99FTkiZz0hp8cnm14nY-YKLyRfD2rJ9OGQyvgHv3p2r4IEwpVHK-tbjh9JAi4qkqkI_6UURqiuJuNnrXjH27kXH04iElUU3eCs5O_qPIt7iP9aRA_vjHXfPpaHnXHvKQkhqOHRKVWXbKyAAK_DgUmc-h_bvZuVx_hm5mUXqQwvkjJA" />
+                    <img alt="Plaenge" class="h-10 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ui16qfKOPrO3IJRbGNG6SdMbdMoDGmtVXj3yVmOLoFKGzRKnFw1-sMg-vFtFiKJ3cKqflyLsCZBiPAnfcTkc5mSRp-SSPCjrIxq1CXcm72L3iEFPNYo6WCZ3nMKdUV_RSZ5dvzIHx7_6715pgJuzHPw75jOm-G37LS0KH2-bvYzlvXapBXz0bQU8K4kn1nBTmKZ7fmf9G0WIRZRJn1VDOz8feS1FtGSJyxXt4c2ioBsIdOt5gQ0BIqByL_5qi6RPzdG9NhqCXzVMw" />
+                    <img alt="Dicorel" class="h-16 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uiVIeX2a-OYSRyB91awxot5u2mJLpl8NFJ0R5KEXpL05RXFuWmArCpOS4Pp63Wb4CLri0hQCeI4Csd7jlgDb1PLJEZelWOwMl7DWpCfN5aMO9rnYdLehUw3o6ofWF5XbKVKNB4PQRWddCqEurzWXTiZQEtmK8kdyU9gKxYfgTlGKPgySjuOgFAwn14PkQ6JMLz6e8yUiBlwD2WDA8reYtqc0VvDqlIfM74MU6llawKYMHNHz7lZhuRAcQajf4lK2eA_RFW9Z93S" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="full-width rounded-t-[1.5rem] mt-12 bg-[#1A3D80] dark:bg-[#002763] text-white">
+        <div class="w-full px-8 py-12 flex flex-col items-center gap-8 max-w-7xl mx-auto">
+            <div class="text-xl font-bold text-white font-headline">Instituto Borboletas</div>
+            <div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm leading-relaxed">
+                <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Privacidade</a>
+                <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Termos de Uso</a>
+                <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Contato</a>
+                <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Parceiros</a>
+            </div>
+            <div class="flex gap-6">
+                <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                    href="#">
+                    <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                    href="#">
+                    <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="text-xs text-white/40 pt-4 border-t border-white/10 w-full text-center">
+                © 2024 Instituto Borboletas. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
