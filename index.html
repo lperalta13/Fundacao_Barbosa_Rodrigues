@@ -384,61 +384,10 @@
                         Ver Mais <span class="material-symbols-outlined">open_in_new</span>
                     </a>
                 </div>
-                <div id="news-feed-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Os itens de notícia serão carregados dinamicamente via JavaScript -->
-                    <article
-                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
-                        <div class="h-56 overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                data-alt="smiling children in a bright classroom holding colorful craft butterflies, soft natural lighting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi4mvjD10yKvwVs-VR7MqQs7AQMRncHhnxhclykxt-nWSkHzhnmr7GbXkpy1cZFCmoWHyL4SkmWEtyLj3AGipvrupwmvxekEhry_L-WhwpyM4tV1K7QKyChR8T5X8giu6X5rwQcG0DQ7u1fEQ0eIP0QVx0FcOnp5UijwigS0-XnfUFkQiarOKlFebs0g8srCx-X3EXdUaMvS0l6LRWFROBKbnfhlD1gQs_H43SXrjWEpbesSTm1kyKz_i61DHfBWGEaBSZO-K909Q" />
-                        </div>
-                        <div class="p-8">
-                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">15 Out
-                                2024</time>
-                            <h3
-                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
-                                Oficina de Artesanato bate recorde de inscrições</h3>
-                            <p class="text-on-surface-variant line-clamp-2">Mais de 200 jovens participaram da primeira
-                                etapa do projeto 'Voo das Borboletas' neste final de semana...</p>
-                        </div>
-                    </article>
-                    <!-- News Item 2 -->
-                    <article
-                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
-                        <div class="h-56 overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                data-alt="outdoor concert stage with local musicians performing under colorful stage lights at night"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHtt_NzElRmEZh-bZXIhCIMLWDx1r8oxtNa0w1hpsi1azluLzZOi_ACFwBDZiw5tUOaciJv-Qlym3sP5LtH03Ae3wowpkiZYB1vKYvdLgQELd6Z3SFNLXtL_1-m_L6gdTsf8y4TWvyjYxB3smxQoAEFuv1HXt-_uKJmchbAtfJHRvG5SMk_GQWY84SBjTlAcOWSpy0JqcHcqBv5E8NxyHhV7-YmqhpNLHiEzbne_-4cNuMwJ76rkxmFvJ3kJqkGTDZk9jkxScR2KI" />
-                        </div>
-                        <div class="p-8">
-                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">10 Out
-                                2024</time>
-                            <h3
-                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
-                                Festival de Inverno arrecada 5 toneladas de alimentos</h3>
-                            <p class="text-on-surface-variant line-clamp-2">A união entre música e solidariedade rendeu
-                                resultados históricos para as famílias cadastradas no instituto...</p>
-                        </div>
-                    </article>
-                    <!-- News Item 3 -->
-                    <article
-                        class="bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow">
-                        <div class="h-56 overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                data-alt="professional workshop setting with mentors guiding young entrepreneurs, modern collaborative space"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bL6iLpsq0_IhAjS-mMhx1bBcpgoNEY2-_c8TQET1qbfQ22RJzOPWR9zIlE3zwkTo-W0Jk2c2S4nvHNOQ-IqU7t5BL0UE58ZYBmXaxkqfG-fL4NXcYcbHVZjX_UN721-vkx4RQ2ZijLO6qCfytSEzrYslY9AMRwCVZ8lOOEgK9NUR51ndvG_BHPBDqro6Y-78aIwMqlf9ciWTQjrwsLJUyP086lZYKD9r581z6O82yPuvR_ObOaa1RK_p7HJYio_l0fgMXGLQ7eA" />
-                        </div>
-                        <div class="p-8">
-                            <time class="text-sm font-bold text-secondary-fixed-dim uppercase tracking-wider">05 Out
-                                2024</time>
-                            <h3
-                                class="font-headline text-xl font-bold mt-4 mb-4 text-primary leading-snug group-hover:text-secondary transition-colors">
-                                Novo programa de mentoria para empreendedores sociais</h3>
-                            <p class="text-on-surface-variant line-clamp-2">Inscrições abertas para o ciclo de
-                                aceleração 2025. Conheça as etapas e como submeter seu projeto social...</p>
-                        </div>
-                    </article>
+                <div id="news-feed-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+                <!-- Indicadores de carregamento e erro -->
+                <div id="news-loading-indicator" class="text-center text-on-surface-variant py-8">Carregando notícias...</div>
+                <div id="news-error-message" class="text-center text-error py-8 hidden">Não foi possível carregar as notícias. Tente novamente mais tarde.</div>
                 </div>
             </div>
         </section>
@@ -500,7 +449,13 @@
         async function fetchNews() {
             const feedUrl = 'https://correiodoestado.com.br/correio-b/feed/';
             const container = document.getElementById('news-feed-container');
+            const loadingIndicator = document.getElementById('news-loading-indicator');
+            const errorMessage = document.getElementById('news-error-message');
             
+            container.innerHTML = ''; // Limpa o conteúdo existente
+            loadingIndicator.classList.remove('hidden'); // Mostra o indicador de carregamento
+            errorMessage.classList.add('hidden'); // Esconde qualquer mensagem de erro anterior
+
             try {
                 // Utilizando um proxy para evitar problemas de CORS
                 const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`);
@@ -519,9 +474,24 @@
                     const pubDate = new Date(item.querySelector("pubDate").textContent);
                     const description = item.querySelector("description").textContent;
                     
-                    // Tenta extrair a imagem da descrição ou usa um placeholder
-                    const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
-                    const imageUrl = imgMatch ? imgMatch[1] : 'https://images.unsplash.com/photo-1585829365234-781f8c48e387?q=80&w=800';
+                    let imageUrl = 'https://images.unsplash.com/photo-1585829365234-781f8c48e387?q=80&w=800'; // Placeholder padrão
+
+                    // Tenta extrair a imagem de media:content ou media:thumbnail (comum em feeds WordPress)
+                    const mediaContent = item.querySelector('media\\:content');
+                    if (mediaContent && mediaContent.getAttribute('url')) {
+                        imageUrl = mediaContent.getAttribute('url');
+                    } else {
+                        const mediaThumbnail = item.querySelector('media\\:thumbnail');
+                        if (mediaThumbnail && mediaThumbnail.getAttribute('url')) {
+                            imageUrl = mediaThumbnail.getAttribute('url');
+                        } else {
+                            // Fallback para extrair da descrição se não encontrar em media:content/thumbnail
+                            const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
+                            if (imgMatch) {
+                                imageUrl = imgMatch[1];
+                            }
+                        }
+                    }
                     
                     // Limpa tags HTML da descrição para o resumo
                     const cleanText = description.replace(/<[^>]*>?/gm, '').substring(0, 120) + '...';
@@ -546,6 +516,10 @@
                 container.innerHTML = htmlContent;
             } catch (error) {
                 console.error('Erro ao carregar o feed de notícias:', error);
+                errorMessage.classList.remove('hidden'); // Mostra a mensagem de erro
+                container.innerHTML = ''; // Garante que o container esteja vazio
+            } finally {
+                loadingIndicator.classList.add('hidden'); // Esconde o indicador de carregamento, independentemente do sucesso ou falha
             }
         }
         fetchNews();
