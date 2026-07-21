@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Instituto Borboletas | Transformação Social e Cultural</title>
+    <title>Fundação Barbosa Rodrigues | Transformação Social e Cultural</title>
+    <link rel="preload" as="image" href="fundacao-barbosa-rodrigues-banner-principal.webp" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
@@ -103,10 +104,10 @@
     <!-- TopNavBar -->
     <nav
         class="docked full-width top-0 sticky z-50 bg-[#fbf9f8]/80 backdrop-blur-xl dark:bg-[#1b1c1c]/80 shadow-sm dark:shadow-none transition-all duration-300">
-        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center w-full px-4 sm:px-8 py-4 max-w-7xl mx-auto">
             <div class="text-2xl font-black text-[#1A3D80] dark:text-white uppercase tracking-tighter font-headline">
                 <img alt="Fundação Barbosa Rodrigues"
-                    class="h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105"
+                    class="h-10 md:h-20 w-auto object-contain transition-transform hover:scale-105"
                     src="logo-fund.png" />
             </div>
             <div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-semibold tracking-tight">
@@ -120,41 +121,88 @@
                     href="#porque">Por que Borboletas?</a>
                 <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
                     href="#noticias">Notícias</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 hover:text-[#006e2c] transition-colors duration-300"
+                    href="nucleo-cultural-acervo-diario-da-serra/">Acervo Diário da Serra</a>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <button
-                    class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    class="bg-primary text-on-primary px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-semibold hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
                     Doe Agora
+                </button>
+                <button id="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    class="md:hidden p-2 rounded-lg text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined text-3xl" id="mobile-menu-icon">menu</span>
                 </button>
             </div>
         </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-black/5 dark:border-white/10 bg-[#fbf9f8] dark:bg-[#1b1c1c]">
+            <div class="flex flex-col px-4 sm:px-8 py-4 gap-1 font-['Plus_Jakarta_Sans'] font-semibold tracking-tight">
+                <a class="text-[#006e2c] py-3 border-b border-black/5 dark:border-white/10" href="#">Início</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 py-3 border-b border-black/5 dark:border-white/10"
+                    href="#acoes">Ações</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 py-3 border-b border-black/5 dark:border-white/10"
+                    href="#sobre">Sobre Nós</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 py-3 border-b border-black/5 dark:border-white/10"
+                    href="#porque">Por que Borboletas?</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 py-3 border-b border-black/5 dark:border-white/10"
+                    href="#noticias">Notícias</a>
+                <a class="text-[#1b1c1c] dark:text-[#fbf9f8] opacity-80 py-3"
+                    href="nucleo-cultural-acervo-diario-da-serra/">Acervo Diário da Serra</a>
+            </div>
+        </div>
     </nav>
+    <script>
+        (function () {
+            var toggle = document.getElementById('mobile-menu-toggle');
+            var menu = document.getElementById('mobile-menu');
+            var icon = document.getElementById('mobile-menu-icon');
+
+            function setOpen(open) {
+                menu.classList.toggle('hidden', !open);
+                toggle.setAttribute('aria-expanded', String(open));
+                icon.textContent = open ? 'close' : 'menu';
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(menu.classList.contains('hidden'));
+            });
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768) setOpen(false);
+            });
+        })();
+    </script>
     <main>
         <!-- Section 1: Hero Carousel -->
         <section class="relative h-[870px] w-full overflow-hidden bg-surface">
             <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover"
-                    data-alt="vibrant community festival with diverse people smiling and celebrating under warm golden sunset light in an urban park"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCokBQrOn0floCpcWnX9ZnQfUzoPbIQp1KfE6kWFBt1RPuk3w05WYeDKf78r-qaP-mN_6YADsWHEfm5HrMV81yduyWi73y_4X3q58PMzQ58MP7kz9KYKiARqFflaglbkQ9x1huB-U_iKtCPYz0lMWfU5-QUXRyj-r5jCdJNYy5tOvjhfUpfcb6ACL-iPbF3DlpzU72OOIAaFWq_K_7DgmdpVnucVqMcAPG8YVw3QSk2eDOEBfn6MM4fqNuiEG32ZGqN7VlcdxI0Vy8" />
+                <img class="w-full h-full object-cover" width="1000" height="667"
+                    alt="Apresentação musical dos beneficiários da Fundação Barbosa Rodrigues no projeto Vida, Arte e Cidadania"
+                    src="fundacao-barbosa-rodrigues-banner-principal.webp" />
                 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
             </div>
             <div
                 class="relative z-10 h-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-start text-on-primary">
-                <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl leading-[1.1]">
+                <h1
+                    class="font-headline text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-3xl leading-[1.1] break-words">
                     Transformando <span class="text-secondary-fixed">Vidas</span> através da Cultura e Educação
                 </h1>
                 <p class="mt-6 text-xl md:text-2xl text-primary-fixed max-w-2xl font-light leading-relaxed">
                     Fomentamos o desenvolvimento social e cultural em comunidades, criando asas para novos futuros.
                 </p>
-                <div class="mt-10 flex gap-4">
+                <div class="mt-10 flex flex-wrap gap-4">
                     <button
                         class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary/90 transition-all active:scale-95">
                         Conheça nossos Projetos
                     </button>
-                    <button
+                    <a href="https://wa.me/556733213030" target="_blank" rel="noopener noreferrer"
                         class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
                         Fale Conosco
-                    </button>
+                    </a>
                 </div>
             </div>
             <!-- Carousel Indicators -->
@@ -175,7 +223,7 @@
                             <span class="material-symbols-outlined text-sm">history_edu</span>
                             Nossa Trajetória
                         </div>
-                        <h2 class="font-headline text-4xl md:text-6xl font-black text-primary leading-tight">
+                        <h2 class="font-headline text-3xl sm:text-4xl md:text-6xl font-black text-primary leading-tight break-words">
                             Mais de <span class="text-[#8338ec]">43 anos</span> de impacto e transformação.
                         </h2>
                         <div class="prose prose-lg text-on-surface-variant font-medium leading-relaxed space-y-6">
@@ -298,7 +346,7 @@
                     <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-8 leading-tight">Mudar
                         o mundo através da empatia e ação coletiva.</h2>
                     <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
-                        <p>O Instituto Borboletas nasceu da convicção de que a arte e a educação são as ferramentas mais
+                        <p>A Fundação Barbosa Rodrigues nasceu da convicção de que a arte e a educação são as ferramentas mais
                             potentes para a metamorfose social. Nossa missão é criar pontes entre oportunidades e
                             talentos esquecidos.</p>
                         <p>Valores como transparência, respeito à diversidade e compromisso com o desenvolvimento
@@ -311,8 +359,8 @@
                             <div class="text-sm uppercase font-bold text-outline">Pessoas Impactadas</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-black text-secondary">120+</div>
-                            <div class="text-sm uppercase font-bold text-outline">Projetos Ativos</div>
+                            <div class="text-3xl font-black text-secondary">+120</div>
+                            <div class="text-sm uppercase font-bold text-outline">Projetos Executados</div>
                         </div>
                     </div>
                 </div>
@@ -335,6 +383,23 @@
                 <h2 class="font-headline text-4xl font-extrabold text-primary mb-6">Por que Borboletas?</h2>
                 <p class="text-lg text-on-surface-variant">Nosso diferencial está na abordagem humanizada e no suporte
                     de longo prazo que oferecemos a cada beneficiado.</p>
+                <!--
+                    PENDÊNCIA: arquivo "PNG BORBOLETAS.png" não foi encontrado no repositório.
+                    Não usamos o nome sugerido "borboletas.png" pois esse nome já é usado pela
+                    imagem institucional da seção "Fundação Barbosa Rodrigues" (ver <img> com
+                    alt="Imagem da Fundação Barbosa Rodrigues..." mais acima neste arquivo).
+                    Ação necessária: colocar o arquivo na RAIZ do projeto com o nome:
+                        por-que-borboletas.png
+                    O onerror abaixo apenas oculta o contêiner enquanto o arquivo não existir,
+                    evitando o ícone de imagem quebrada; a imagem some do onerror automaticamente
+                    assim que o arquivo for adicionado (nenhuma outra alteração de código é necessária).
+                -->
+                <div class="mt-10 mx-auto max-w-md rounded-[2rem] overflow-hidden shadow-xl">
+                    <img class="w-full h-auto object-cover" loading="lazy"
+                        alt="Fundação Barbosa Rodrigues - imagem ilustrativa da seção Por que Borboletas"
+                        src="por-que-borboletas.png"
+                        onerror="this.parentElement.style.display='none'" />
+                </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="flex flex-col items-center text-center group">
@@ -417,7 +482,7 @@
     <!-- Footer -->
     <footer class="full-width rounded-t-[1.5rem] mt-12 bg-[#1A3D80] dark:bg-[#002763] text-white">
         <div class="w-full px-8 py-12 flex flex-col items-center gap-8 max-w-7xl mx-auto">
-            <div class="text-xl font-bold text-white font-headline">Instituto Borboletas</div>
+            <div class="text-xl font-bold text-white font-headline">Fundação Barbosa Rodrigues</div>
             <div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm leading-relaxed">
                 <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Privacidade</a>
                 <a class="text-white/70 hover:text-[#ea9c14] transition-all duration-200" href="#">Termos de Uso</a>
@@ -426,7 +491,8 @@
             </div>
             <div class="flex gap-6">
                 <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
-                    href="https://www.facebook.com/FundacaoBarbosaRodrigues/">
+                    href="https://www.facebook.com/FundacaoBarbosaRodrigues/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook: Fundação Barbosa Rodrigues | Campo Grande – MS" title="Fundação Barbosa Rodrigues | Campo Grande – MS">
                     <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
                         <path
                             d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
@@ -434,7 +500,8 @@
                     </svg>
                 </a>
                 <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
-                    href="https://www.instagram.com/fundacaobarbosarodrigues_/">
+                    href="https://www.instagram.com/fundacaobarbosarodrigues_/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram: Fundação Barbosa Rodrigues (@fundacaobarbosarodrigues_)" title="Fundação Barbosa Rodrigues (@fundacaobarbosarodrigues_)">
                     <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
                         <path
                             d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
@@ -443,7 +510,7 @@
                 </a>
             </div>
             <div class="text-xs text-white/40 pt-4 border-t border-white/10 w-full text-center">
-                © 2024 Instituto Borboletas. Todos os direitos reservados.
+                © 2024 Fundação Barbosa Rodrigues. Todos os direitos reservados.
             </div>
         </div>
     </footer>
